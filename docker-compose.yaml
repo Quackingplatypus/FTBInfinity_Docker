@@ -1,0 +1,13 @@
+services:
+        FTBInfinityServer:
+                container_name: FTBInfinityServer
+                image: ftbinfinityserver:latest
+                ports:
+                        - "25565:25565"
+                volumes:
+                        - type: bind
+                          source: ./server_test
+                          target: /home/minecraft/server
+                command: /home/minecraft/server/ServerStart.sh
+                stdin_open: true
+                tty: true
